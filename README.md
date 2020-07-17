@@ -69,3 +69,48 @@ Isr: 0
         Topic: first_topic      Partition: 2    Leader: 0       Replicas: 0
 Isr: 0
 ```
+
+
+```
+Create 2nd topic
+
+kafka-topics.bat --zookeeper 127.0.0.1:2181 --topic seccond_topic --create --partitions 3 --replication-factor 1
+
+
+```
+
+
+```
+Delete topic
+
+kafka-topics --zookeeper 127.0.0.1:2181 --topic first_topic --delete
+
+NOTE:
+
+In windows there is a bug if you delete topic , the kafka crashes , so dont delete
+Bug:1194
+
+```
+
+
+```
+produce messsages
+
+kafka-console-producer.bat --broker-list 127.0.0.1:9092 --topic first_topic
+
+```
+
+
+```
+C:\kafka_2.12-2.5.0>kafka-console-producer.bat --broker-list 127.0.0.1:9092 --to
+pic first_topic
+>hello dhana
+>learning kafka
+>another messsage
+>:-)
+>Terminate batch job (Y/N)? y
+
+C:\kafka_2.12-2.5.0>
+
+```
+
