@@ -30,6 +30,21 @@ Start kafka
   Donot delete any topics , other wise your kafka will crash , There is a bug when you delete the topics.
   
   
+#Start with kafka topics
+```
+Below  has some errors , missing required arguments for partitions
+kafka-topics.bat --zookeeper 127.0.0.1:2181 --topic first_topic --create 
+
+Below  has some errors , missing required arguments for replication-factor
+kafka-topics.bat --zookeeper 127.0.0.1:2181 --topic first_topic --create --partitions 3
+
+replication factor larger than available broker we have only 1 broker
+kafka-topics.bat --zookeeper 127.0.0.1:2181 --topic first_topic --create --partitions 3 --replication-factor 2
+
+
+kafka-topics.bat --zookeeper 127.0.0.1:2181 --topic first_topic --create --partitions 3 --replication-factor 1
+
+```
 
 
 
