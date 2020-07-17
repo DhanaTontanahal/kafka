@@ -47,6 +47,25 @@ kafka-topics.bat --zookeeper 127.0.0.1:2181 --topic first_topic --create --parti
 ```
 
 
+How do we know that topic has been created?
+```
+kafka-topics --zookeeper 127.0.0.1:2181 --list
+```
 
+Information about the topic created:
+```
+kafka-topics --zookeeper 127.0.0.1:2181 --topic <topicname> describe
+```
 
+```
+C:\kafka_2.12-2.5.0>kafka-topics --zookeeper 127.0.0.1:2181 --topic first_topic
+--describe
+Topic: first_topic      PartitionCount: 3       ReplicationFactor: 1    Configs:
 
+        Topic: first_topic      Partition: 0    Leader: 0       Replicas: 0
+Isr: 0
+        Topic: first_topic      Partition: 1    Leader: 0       Replicas: 0
+Isr: 0
+        Topic: first_topic      Partition: 2    Leader: 0       Replicas: 0
+Isr: 0
+```
